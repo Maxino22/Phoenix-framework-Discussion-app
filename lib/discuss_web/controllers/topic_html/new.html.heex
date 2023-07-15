@@ -1,0 +1,17 @@
+<.flash_group flash={@flash} />
+<div class="container mx-auto max-w-3xl">
+  <div class="flex justify-center">
+    <h1 class="text-4xl text-center">Hello</h1>
+    
+    <.simple_form :let={f} for={@changeset}>
+      <.input field={f[:title]} placeholder="title" type="text" label="Title" required />
+      <:actions>
+        <.button phx-disable-with="Adding Topic..." class="w-full">Add Topic</.button>
+      </:actions>
+    </.simple_form>
+    
+    <%!-- <%= form_for @changeset, Routes.topic_path(@conn, :create), fn f -> %>
+      <%= text_input(f, :title, placeholder: "Title", class: "w-full") %>
+    <% end %> --%>
+  </div>
+</div>
