@@ -1,12 +1,12 @@
 <.flash_group flash={@flash} />
 <div class="container mx-auto max-w-3xl">
   <div class="flex flex-col justify-center">
-    <h1 class="text-4xl text-center">Hello</h1>
+    <h1 class="text-4xl text-center">Edit Topic</h1>
     
-    <.form :let={f} for={@changeset}  action={~p"/topics"} class=" flex flex-col space-y-3">
+    <.form :let={f} for={@changeset} action={~p"/topics/#{@topic.id}"}  class=" flex flex-col space-y-3">
       <.input field={f[:title]} class="rounded-md shadow-sm" />
       <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md shadow-sm">
-        Submit
+        Save
       </button>
     </.form>
   </div>

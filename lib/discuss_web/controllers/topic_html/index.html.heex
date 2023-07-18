@@ -1,0 +1,23 @@
+<.flash_group flash={@flash} />
+<div class="container mx-auto max-w-3xl">
+<div class="flex justify-between">
+<h1 class="text-5xl font-bold">Topics</h1>
+<.link class="py-3 px-3 border text-white rounded-lg shadow-sm bg-blue-600" href={~p"/new"}>Add Topic</.link>
+</div>
+<ul class="border my-4 shadow-sm">
+ <li class="text-sm font-semibold border-b p-4" :for={item <- @topics}>
+ <div class="flex justify-between items-center">
+ <span> <%= item.title %>  </span>
+ <div class="flex space-x-3">
+  <.link class="bg-yellow-400 text-white rounded-lg py-2 px-2 " href={~p"/#{item.id}/edit"} >Edit</.link>
+  <.link class="bg-red-600 text-white rounded-lg py-2 px-1 " href={~p"/#{item.id}"} method="delete" data-confirm="Are you sure?" >Delete</.link>
+ </div>
+ </div>
+
+ 
+ 
+ </li>
+
+</ul>
+
+</div>
