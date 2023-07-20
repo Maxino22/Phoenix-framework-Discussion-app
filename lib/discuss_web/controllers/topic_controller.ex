@@ -4,6 +4,7 @@ defmodule DiscussWeb.TopicController do
   alias Discuss.{Topic, Topics}
 
   def index(conn, _params) do
+    IO.inspect(conn.assigns)
     topics = Topics.list_topics()
 
     conn

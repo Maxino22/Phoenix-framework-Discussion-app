@@ -11,6 +11,13 @@ defmodule DiscussWeb.AuthController do
     singin(conn, changeset)
   end
 
+  def signout(conn, _params) do
+    conn
+    |> put_flash(:info, "Logout Successfully")
+    |> configure_session(drop: true)
+    |> redirect(to: ~p"/")
+  end
+
   defp singin(conn, changeset) do
     case insert_or_update_user(changeset) do
       {:ok, user} ->
